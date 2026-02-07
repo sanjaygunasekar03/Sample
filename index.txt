@@ -47,7 +47,7 @@
 <div id="mainContent">
 
   <!-- Original Hero (hidden on mobile) -->
-  <section id="home" class="hero" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('image/Homebg.webp'); background-size: cover; background-position: center;">
+  <section id="home" class="hero" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('image/home-bg.webp'); background-size: cover; background-position: center;">
     <div class="container">
       <div class="hero-content">
         <h1>Expert Billing Solutions Starting at 2% of Your Monthly Collections</h1>
@@ -521,4 +521,5 @@
 <script src="script.js"></script>
 
 </body>
+
 </html>
