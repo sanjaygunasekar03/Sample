@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>US Medical Billing Services | Trusted by Physicians</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <img src="image/logo-dark.webp" alt="US Medical Billing Services">
+    </div>
+    <div class="menu-toggle" id="mobile-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav class="navbar" id="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#benefits">Why Us</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="header-contact">
+      <a href="tel:+1 (800)-253-7320" class="btn btn-primary"><i class="fas fa-phone"></i> +1 (800)-253-7320</a>
+    </div>
+  </div>
+</header>
+
+<div id="mainContent">
+
+  <!-- Original Hero (hidden on mobile) -->
+  <section id="home" class="hero" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('image/Homebg.webp'); background-size: cover; background-position: center;">
+    <div class="container">
+      <div class="hero-content">
+        <h1>Expert Billing Solutions Starting at 2% of Your Monthly Collections</h1>
+        <p>High-quality medical billing doesn’t have to come at a premium. Our affordable, performance-driven billing solutions are designed to maximize reimbursements, reduce denials, and streamline your revenue cycle—starting at only 2% of your monthly collections. </p>
+        <p>No hidden fees. No long-term lock-ins. Just measurable results.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+          <a href="#services" class="btn btn-secondary">Explore our Services</a>
+        </div>
+        <div class="stats-grid">
+          <div class="stat-item"><span>$380M</span><p>Charges Entered</p></div>
+          <div class="stat-item"><span>1.5M</span><p>Medical Charts Coded</p></div>
+          <div class="stat-item"><span>$160M</span><p>Payments Posted</p></div>
+        </div>
+      </div>
+      <div class="appointment-form-wrapper">
+        <div class="appointment-form">
+          <h2>Check Your Pricing in Minutes</h2>
+          <p>Find out how much you can save with our flexible, percentage-based billing model. Share a few details, and receive a customized quote tailored to your practice size, specialty, and volume.</p>
+          <form id="multiStepForm">
+            <div class="step-indicators">
+              <div class="step-dot active" id="dot1"></div>
+              <div class="step-dot" id="dot2"></div>
+            </div>
+            <div class="form-step active" id="step1">
+              <div class="form-group">
+                <label>Contact Name</label>
+                <input type="text" id="contactName" placeholder="eg: sam">
+                <div class="error-text" id="nameError">Please enter contact name</div>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="email" placeholder="eg: sam@example.com">
+                <div class="error-text" id="emailError">Please enter a valid email</div>
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="phone" placeholder="eg: 1234567890">
+                <div class="error-text" id="phoneError">Please enter a valid 10-digit phone number</div>
+              </div>
+              <button type="button" class="btn-primary-full" onclick="validateStep1()">Next Step</button>
+            </div>
+            <div class="form-step" id="step2">
+              <div class="form-group">
+                <label>Practice / Organization Name</label>
+                <input type="text" placeholder="eg: sam healthcare" required>
+              </div>
+              <div class="form-group">
+                <label>Medical Specialty</label>
+                <input type="text" placeholder="eg: cardiology" required>
+              </div>
+              <div class="form-group">
+                <label>Average Monthly Collections / Work Volume</label>
+                <input type="text" placeholder="eg: $50,000" required>
+              </div>
+              <div class="form-group">
+                <label>Preferred Pricing Format</label>
+                <select required>
+                  <option value="">-- Select Challenge --</option>
+                  <option>Full-time equivalents (FTE)</option>
+                  <option>Transaction-based pricing</option>
+                  <option>Volume discounts</option>
+                  <option>% on monthly collections</option>
+                  <option>Per claim rate</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <button type="submit" class="btn-primary-full">Get My Instant Quote</button>
+              <button type="button" style="background:none;border:none;color:#777;width:100%;margin-top:5px;font-size:12px;cursor:pointer" onclick="prevStep()">Back to Step 1</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mobile-only Hero -->
+  <section class="mobile-hero-section">
+    <div class="container">
+      <img src="image/home-mobile.webp" alt="US Medical Billing Services" class="mobile-hero-image">
+      <div class="mobile-hero-content">
+        <h1>Expert Billing Solutions Starting at 2% of Your Monthly Collections</h1>
+        <div class="mobile-hero-actions">
+          <a href="#contact" class="btn btn-primary">Schedule a Consultation</a>
+          <a href="#services" class="btn btn-secondary">Explore our Services</a>
+          <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#mobileQuoteModal">Check Your Pricing</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about-us">
+    <div class="container">
+      <div class="about-content">
+        <span class="section-subtitle">About Us</span>
+        <h2>Affordable. Accurate. Results-Driven Medical Billing Experts.</h2>
+        <p>US Medical Billing Services is an award-winning medical billing and revenue cycle management company with nearly two decades of experience supporting practices across the United States. We partner with providers of all sizes—helping them improve cash flow, maintain compliance, and reduce operational burden.</p><br>
+        <p>With certified billing and coding professionals, specialty-specific expertise across 40+ medical disciplines, and technology-driven workflows, we deliver scalable, affordable billing solutions that consistently outperform in-house teams and traditional vendors.</p>
+        <div class="about-features">
+          <div class="feature-item">
+            <i class="fas fa-tags"></i>
+            <div>
+              <strong>Flexible Pricing Models</strong>
+              <p>Billing solutions starting at 2%, customized to your needs</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-user-shield"></i>
+            <div>
+              <strong>Certified Industry Experts</strong>
+              <p>AAPC® and AHIMA® certified billing & coding professionals</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-microchip"></i>
+            <div>
+              <strong>Intelligent Automation</strong>
+              <p>AI and ML enabled workflows for faster claims and fewer denials</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="image/Aboutus.webp" alt="US Medical Billing Services">
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <section class="partners">
+    <div class="container">
+      <span class="section-subtitle">Strategic Partnerships</span>
+      <h2>Trusted by Leading Healthcare Technology & Compliance Partners</h2>
+      <div class="partner-banner">
+        <div class="partner-slide">
+          <div class="partner-logo-box"><img src="image/aapc.webp" alt="AAPC"></div>
+          <div class="partner-logo-box"><img src="image/apma.webp" alt="APMA"></div>
+          <div class="partner-logo-box"><img src="image/ebridge.webp" alt="eBridge"></div>
+          <div class="partner-logo-box"><img src="image/healthpac.webp" alt="Healthpac"></div>
+          <div class="partner-logo-box"><img src="image/mgma.webp" alt="MGMA"></div>
+          <div class="partner-logo-box"><img src="image/cardchoice.webp" alt="Cardchoice"></div>
+          <div class="partner-logo-box"><img src="image/trizetto.webp" alt="Trizetto"></div>
+          <div class="partner-logo-box"><img src="image/rbma.webp" alt="rbma"></div>
+        </div>
+        <div class="partner-slide">
+          <div class="partner-logo-box"><img src="image/aapc.webp" alt="AAPC"></div>
+          <div class="partner-logo-box"><img src="image/apma.webp" alt="APMA"></div>
+          <div class="partner-logo-box"><img src="image/ebridge.webp" alt="eBridge"></div>
+          <div class="partner-logo-box"><img src="image/healthpac.webp" alt="Healthpac"></div>
+          <div class="partner-logo-box"><img src="image/mgma.webp" alt="MGMA"></div>
+          <div class="partner-logo-box"><img src="image/cardchoice.webp" alt="Cardchoice"></div>
+          <div class="partner-logo-box"><img src="image/trizetto.webp" alt="Trizetto"></div>
+          <div class="partner-logo-box"><img src="image/rbma.webp" alt="rbma"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="services">
+    <div class="container">
+      <span class="section-subtitle">Our Services</span>
+      <h2>End-to-End Revenue Cycle Solutions—One Trusted Partner</h2>
+      <p>From front-end eligibility checks to back-end denial recovery, our services are designed to support every stage of your revenue cycle with precision and transparency.</p>
+      <div class="service-grid">
+        <div class="service-card" data-service="medical-billing">
+          <i class="fas fa-file-invoice-dollar"></i>
+          <h3>Medical Billing</h3>
+          <p>End-to-end medical billing solutions designed to maximize reimbursements while keeping costs predictably low.</p>
+          <a href="javascript:void(0)">Read More →</a>
+        </div>
+        <div class="service-card" data-service="medical-coding">
+          <i class="fas fa-notes-medical"></i>
+          <h3>Medical Coding & Audits</h3>
+          <p>Accurate, compliant medical coding that protects revenue and minimizes audit risk.</p>
+          <a href="javascript:void(0)">Read More →</a>
+        </div>
+        <div class="service-card" data-service="ar-management">
+          <i class="fas fa-hand-holding-usd"></i>
+          <h3>Accounts Receivable (AR) Management</h3>
+          <p>Proactive AR follow-up that accelerates payments and recovers missed revenue.</p>
+          <a href="javascript:void(0)">Read More →</a>
+        </div>
+        <div class="service-card" data-service="eligibility">
+          <i class="fas fa-user-check"></i>
+          <h3>Insurance Eligibility & Verification</h3>
+          <p>Front-end eligibility verification that prevents denials before claims are submitted.</p>
+          <a href="javascript:void(0)">Read More →</a>
+        </div>
+        <div class="service-card" data-service="denial-management">
+          <i class="fas fa-file-medical-alt"></i>
+          <h3>Denial Management & Appeals</h3>
+          <p>Strategic denial resolution that recovers revenue and prevents repeat denials.</p>
+          <a href="javascript:void(0)">Read More →</a>
+        </div>
+        <div class="service-card" data-service="charge-entry">
+          <i class="fas fa-credit-card"></i>
+          <h3>Charge Entry & Payment Posting</h3>
+          <p>Precise charge entry and payment posting for clean claims and accurate financial reporting.</p>
+          <a href="javascript:void(0)">Read More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits" class="benefits">
+    <div class="container">
+      <span class="section-subtitle">Why Us</span>
+      <h2>More Revenue. Less Risk. Predictable Costs.</h2>
+      <p>Outsourcing your billing shouldn't be a gamble. Our proven processes, certified experts, and performance benchmarks ensure consistent financial outcomes—at a fraction of the cost of in-house billing.</p>
+      <div class="benefits-grid">
+        <div class="benefit-item">
+          <div class="icon-circle"><i class="fas fa-percent"></i></div>
+          <h3>Lower Billing Costs—Starting at 2%</h3>
+          <p>Reduce overhead and eliminate in-house staffing, training, and software expenses with transparent pricing tied directly to your collections.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="icon-circle"><i class="fas fa-chart-line"></i></div>
+          <h3>Up to 20% Revenue Growth</h3>
+          <p>Recover missed revenue, improve follow-ups, and optimize workflows to increase collections without increasing patient volume.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="icon-circle"><i class="fas fa-check-double"></i></div>
+          <h3>98% First-Pass Claim Acceptance</h3>
+          <p>Clean, payer-compliant claims result in faster reimbursements and fewer rejections at the front end.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="icon-circle"><i class="fas fa-bullseye"></i></div>
+          <h3>99% Coding Accuracy</h3>
+          <p>Certified coders and multi-level quality checks ensure compliant, precise coding that protects revenue and reduces audit risk.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="icon-circle"><i class="fas fa-user-md"></i></div>
+          <h3>Certified, Specialty-Trained Teams</h3>
+          <p>AAPC® and AHIMA® certified professionals with expertise across 40+ specialties support your practice with confidence.</p>
+        </div>
+        <div class="benefit-item">
+          <div class="icon-circle"><i class="fas fa-file-alt"></i></div>
+          <h3>Full Transparency & Reporting</h3>
+          <p>Real-time insights into claims, payments, denials, and AR keep you informed and in control of your revenue cycle.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  
+
+<section class="cta-section" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('image/lets-connect.webp'); background-size: cover; background-position: center;">
+  <div class="container">
+    <span class="section-subtitle" style="color:white; opacity:0.8;">Let's Connect</span>
+    <h2 style="color: white;">Ready to Lower Your Billing Costs Without Sacrificing Performance?</h2>
+    <p style="margin-bottom:30px;">Schedule a free consultation and complimentary practice audit to see how our billing model can improve cash flow, reduce denials, and simplify your operations—starting immediately.</p>
+    <a href="#contact" class="btn btn-secondary" style="background:white; color:var(--primary-color);">Get Started</a>
+  </div>
+</section>
+
+
+
+  <!-- Testimonials -->
+  <section class="testimonials">
+    <div class="container">
+      <span class="section-subtitle">What Our Clients Say</span>
+      <h2>Real Results from Practices Like Yours</h2>
+      <div class="testimonial-slider-container">
+        <button class="slider-btn prev-btn" onclick="moveTestimonial(-1)"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next-btn" onclick="moveTestimonial(1)"><i class="fas fa-chevron-right"></i></button>
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card">
+            <p>Partnering with their team was one of the best decisions we’ve made for our practice. Their team of experts has a deep understanding of anesthesia billing and coding, and they’ve significantly improved our revenue cycle efficiency. The results speak for themselves – our denial rates have dropped, our revenue has increased, and we now have the transparency and control we need to make informed business decisions. Their commitment to excellence has made them an invaluable partner to our practice. We highly recommend their services.</p>
+            <h4>-	CEO, Anesthesia Group in California</h4>
+          </div>
+          <div class="testimonial-card">
+            <p>I wholeheartedly recommend them to any organization seeking to optimize its revenue cycle and achieve lasting financial stability. Their expertise, professionalism, and personalized approach have been instrumental to our practice's growth and success.</p>
+            <h4>Founder, Podiatry Clinic in Los Angeles</h4>
+          </div>
+          <div class="testimonial-card">
+            <p>They have completely transformed our cardiology practice’s billing and coding processes. Their expert team quickly identified our coding issues, provided customized training, and implemented clear protocols that led to a drastic drop in claim denials and a notable revenue increase. We’re now more efficient and can focus more on patient care. Their professionalism, attention to detail, and real-time support have been outstanding. Highly recommend them to any practice looking to improve their revenue cycle!</p>
+            <h4>CEO, Cardiology Group in California</h4>
+          </div>
+          <div class="testimonial-card">
+            <p>They transformed our practice’s coding and documentation. We saw a remarkable increase in revenue, reduced coding complications by 28%, and boosted productivity by 20% in just one year. Their tailored approach and expertise were game-changing for our practice!</p>
+            <h4>CEO, Group Practice in California</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-us">
+    <div class="container" style="display:flex; gap:50px; align-items: flex-start;">
+      <div style="flex:1;">
+        <span class="section-subtitle">Get in Touch</span>
+        <h2>Let’s Build a Smarter, More Affordable Billing Strategy</h2>
+        <p>Have questions or want a deeper review of your revenue cycle? Connect with our experts for a no-obligation consultation and discover how affordable billing can still deliver premium results. </p>
+        <div style="margin-top:30px;">
+          <p>
+            <a href="mailto:info@usmedicalbillingservices.com" style="color: var(--text-color); text-decoration: none;">
+              <i class="fas fa-envelope" style="color:var(--primary-color); margin-right:10px;"></i> info@usmedicalbillingservices.com
+            </a>
+          </p>
+          <p>
+            <a href="tel:+18002537320" style="color: var(--text-color); text-decoration: none;">
+              <i class="fas fa-phone" style="color:var(--primary-color); margin-right:10px;"></i> +1 (800)-253-7320
+            </a>
+          </p>
+          <p>
+            <a href="https://maps.google.com/?q=12454+Pine+Creek+Rd,+Cerritos,+CA+90703" target="_blank" rel="noopener noreferrer" style="color: var(--text-color); text-decoration: none;">
+              <i class="fas fa-map-marker-alt" style="color:var(--primary-color); margin-right:10px;"></i> 12454 Pine Creek Rd, Cerritos, CA 90703
+            </a>
+          </p>
+        </div>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/company/bristol-healthcare-services" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/BristolHealthcareServices/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="https://x.com/BristolHCS" target="_blank" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="appointment-form-wrapper">
+        <form class="appointment-form">
+          <h3>Send Us a Message</h3>
+          <div class="form-group"><label>Name</label><input type="text" required></div>
+          <div class="form-group"><label>Email</label><input type="email" required></div>
+          <div class="form-group"><label>Subject</label><input type="text"></div>
+          <div class="form-group"><label>Message</label><textarea rows="4" required></textarea></div>
+          <button type="submit" class="btn-primary-full">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>US Medical Billing </h4>
+          <p>An award-winning medical billing and revenue cycle management company with nearly two decades of experience.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#benefits">Why Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="#services">Medical Billing</a></li>
+            <li><a href="#services">Coding & Audits</a></li>
+            <li><a href="#services">AR Management</a></li>
+            <li><a href="#services">Insurance Eligibility & Verification</a></li>
+            <li><a href="#services">Denial Management</a></li>
+            <li><a href="#services">Charge Entry & Payment Posting</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <p><i class="fas fa-phone"></i> +1 (800)-253-7320</p>
+          <p><i class="fas fa-envelope"></i> info@usmedicalbillingservices.com</p>
+          <div class="footer-socials">
+            <a href="https://www.linkedin.com/company/bristol-healthcare-services" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/BristolHealthcareServices/" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/BristolHCS" target="_blank" title="Twitter / X"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> US Medical Billing Services. All Rights Reserved. </p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- Modals -->
+<div class="modal fade" id="serviceModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modalTitle">Service Details</h3>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="modalDescription"></div>
+        <h4>Key Capabilities</h4>
+        <ul id="modalPointers"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOBILE QUOTE MODAL - NOW WITH MISSING PARAGRAPH ADDED -->
+<div class="modal fade" id="mobileQuoteModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="appointment-form">
+          <h2>Check Your Pricing in Minutes</h2>
+          <!-- ✅ THIS PARAGRAPH WAS MISSING — NOW ADDED -->
+          <p>Find out how much you can save with our flexible, percentage-based billing model. Share a few details, and receive a customized quote tailored to your practice size, specialty, and volume.</p>
+          <form id="mobileMultiStepForm">
+            <div class="step-indicators">
+              <div class="step-dot active" id="m-dot1"></div>
+              <div class="step-dot" id="m-dot2"></div>
+            </div>
+            <div class="form-step active" id="m-step1">
+              <div class="form-group">
+                <label>Contact Name</label>
+                <input type="text" id="m-contactName" placeholder="eg: sam">
+                <div class="error-text" id="m-nameError">Please enter contact name</div>
+              </div>
+              <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="m-email" placeholder="eg: sam@example.com">
+                <div class="error-text" id="m-emailError">Please enter a valid email</div>
+              </div>
+              <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="m-phone" placeholder="eg: 9871236540">
+                <div class="error-text" id="m-phoneError">Please enter a valid 10-digit phone number</div>
+              </div>
+              <button type="button" class="btn-primary-full" onclick="validateMobileStep1()">Next Step</button>
+            </div>
+            <div class="form-step" id="m-step2">
+              <div class="form-group">
+                <label>Practice / Organization Name</label>
+                <input type="text" placeholder="eg: US Healthcare" required>
+              </div>
+              <div class="form-group">
+                <label>Medical Specialty</label>
+                <input type="text" placeholder="eg: cardiology" required>
+              </div>
+              <div class="form-group">
+                <label>Average Monthly Collections / Work Volume</label>
+                <input type="text" placeholder="eg: $50,000" required>
+              </div>
+              <div class="form-group">
+                <label>Preferred Pricing Format</label>
+                <select required>
+                  <option value="">-- Select Challenge --</option>
+                  <option>Full-time equivalents (FTE)</option>
+                  <option>Transaction-based pricing</option>
+                  <option>Volume discounts</option>
+                  <option>% on monthly collections</option>
+                  <option>Per claim rate</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <button type="submit" class="btn-primary-full">Get My Instant Quote</button>
+              <button type="button" style="background:none;border:none;color:#777;width:100%;margin-top:5px;font-size:12px;cursor:pointer" onclick="mobilePrevStep()">Back to Step 1</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- External JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
